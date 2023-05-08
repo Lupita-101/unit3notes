@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="parent">
+    <input type="text" id="text1"/>
+    <button id="button1">Button</button>
+</div>
+<script>
+console.log(`Hello console!-line 13`);
+
+const inputElement=document.getElementById(`text1`);
+const buttonElement=document.getElementById(`button1`);
+
+inputElement.addEventListener(`change`,function(e){
+    console.log(`The value you entered is ${e.target.value}`);
+})
+inputElement.addEventListener(`input`,function(e) {
+    console.log(`The value you entered is ${e.target.value}`);
+})
+    buttonElement.addEventListner(`click`, function(e){
+    console.log(`you clicked on my button!`)
+        e.stopPropagation();
+})
+    parentElement.addEventListener('mouseover',function(e){
+        console.log(`your mouse on the mouse`)
+    })
+    buttonElement.addEventListner('mouseover', function(e){
+        console.log(`your mouse is on the button`)
+});
+buttonElement.addEventListner('mouseout',function(e){
+    console.log(`your mouse is no longer on the button`)
+
+});
+
+inputElement.addEventListner('focus', function (e){
+    console.log(`you focused on the input`)
+});
+inputElement.addEventListner('blur', function (e){
+    console.log(`you stopped focusing on the input!`)
+});
+</script>
+</body>
+</html>
